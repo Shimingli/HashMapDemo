@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 /**
- * HasmMap的原理
+ * HasmMap的
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0;i<100000;i++){
             integerIntegerHashMap.put(i,i);
         }
-
+       String s="";
+        s.hashCode();
         for (int i=0;i<integerIntegerHashMap.getSize();i++){
 
         }

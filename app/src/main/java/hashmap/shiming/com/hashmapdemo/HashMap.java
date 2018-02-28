@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class HashMap<K,V> implements Map<K,V> {
 
     private static int defaultLength=1 << 4;//底层数组的默认长度为16
-
+   //以加载因子的大小需要结合时间和空间效率考虑。
     private static double defaultLoader=.75f;//默认的负载因子.  超过3/4的时候，扩容，为了更高的效率获取数组
 
     private HashMapEntry<K,V,Entry<K, V>>[] table=null;
@@ -38,11 +38,8 @@ public class HashMap<K,V> implements Map<K,V> {
         if (size>=defaultLength*defaultLoader){
             upSize();
         }
-        System.out.println("shiming "  +size);
-        System.out.println("shiming "  +defaultLength*defaultLoader);
         //创建一个hash函数，根据key和hash函数算出来数组下表
         int index = getIndex(k);
-        System.out.println("shiming index" +index);
         Entry<K, V> kvEntry = table[index];
         //kvEntry 为null 的，说明table的index位置上没有元素
         if (kvEntry==null){
